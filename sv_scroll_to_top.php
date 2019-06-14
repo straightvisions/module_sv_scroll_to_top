@@ -15,11 +15,11 @@ class sv_scroll_to_top extends init {
 	public function init() {
 		// Module Info
 		$this->set_module_title( 'SV Scroll To Top' );
-		$this->set_module_desc( __( 'This module gives the ability to manage & display a scroll to top button.', 'sv_100' ) );
+		$this->set_module_desc( __( 'This module gives the ability to manage & display a scroll to top button.', 'straightvisions_100' ) );
 
 		// Section Info
-		$this->set_section_title( __( 'Scroll To Top', 'sv_100' ) );
-		$this->set_section_desc( __( 'Configure your button', 'sv_100' ) );
+		$this->set_section_title( __( 'Scroll To Top - Button', 'straightvisions_100' ) );
+		$this->set_section_desc( __( 'Settings', 'straightvisions_100' ) );
 		$this->set_section_type( 'settings' );
 		$this->get_root()->add_section( $this );
 
@@ -30,8 +30,8 @@ class sv_scroll_to_top extends init {
 		$this->s['icon'] =
 			$this->get_setting()
 				->set_ID( 'icon' )
-				->set_title( __( 'Icon Embed Code', 'sv_100' ) )
-				->set_description( __( 'Here you can post the SVG embed code.', 'sv_100' ) )
+				->set_title( __( 'Icon Embed Code', 'straightvisions_100' ) )
+				->set_description( __( 'Here you can post the SVG embed code.', 'straightvisions_100' ) )
 				->load_type( 'textarea' );
 
 		return $this;
