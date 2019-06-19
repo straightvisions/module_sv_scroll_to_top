@@ -27,6 +27,13 @@ class sv_scroll_to_top extends init {
 	}
 
 	protected function load_settings(): sv_scroll_to_top {
+		$this->s['active'] =
+			$this->get_setting()
+				 ->set_ID( 'active' )
+				 ->set_title( __( 'Active', 'straightvisions_100' ) )
+				 ->set_description( __( 'Activate or deactivate the scroll to top button.', 'straightvisions_100' ) )
+				 ->load_type( 'checkbox' );
+		
 		$this->s['icon'] =
 			$this->get_setting()
 				->set_ID( 'icon' )
@@ -69,23 +76,27 @@ class sv_scroll_to_top extends init {
 	}
 
 	protected function router( array $settings ): string {
-		ob_start();
-		$this->scripts_queue['default']->set_inline( $settings['inline'] )->set_is_enqueued();
-		$this->scripts_queue['default_js']->set_is_enqueued();
-
-		if ( ! $settings['icon'] && strlen( $this->get_setting( 'icon' )->run_type()->get_data() ) > 0 ) {
-			$settings['icon']   = $this->get_setting( 'icon' )->run_type()->get_data();
+		$output = '';
+		
+		if ( $this->get_setting( 'active' )->run_type()->get_data() === '1' ) {
+			ob_start();
+			$this->scripts_queue['default']->set_inline( $settings['inline'] )->set_is_enqueued();
+			$this->scripts_queue['default_js']->set_is_enqueued();
+			
+			if ( ! $settings['icon'] && strlen( $this->get_setting( 'icon' )->run_type()->get_data() ) > 0 ) {
+				$settings['icon']   = $this->get_setting( 'icon' )->run_type()->get_data();
+			}
+			
+			echo '<style data-sv_100_module="'. $this->get_prefix() . '">';
+			echo ':root {' . "\n";
+			echo '--sv_scroll_to_top-icon' . ":  url('data:image/svg+xml;utf8," . $settings['icon'] . "');\n";
+			echo '}</style>';
+			
+			echo '<div class="' . $this->get_prefix() . '"><i></i></div>';
+			
+			$output	= ob_get_contents();
+			ob_end_clean();
 		}
-
-		echo '<style data-sv_100_module="'. $this->get_prefix() . '">';
-		echo ':root {' . "\n";
-		echo '--sv_scroll_to_top-icon' . ":  url('data:image/svg+xml;utf8," . $settings['icon'] . "');\n";
-		echo '}</style>';
-
-		echo '<div class="' . $this->get_prefix() . '"><i></i></div>';
-
-		$output	= ob_get_contents();
-		ob_end_clean();
 
 		return $output;
 	}
