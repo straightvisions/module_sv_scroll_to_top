@@ -77,7 +77,7 @@ class sv_scroll_to_top extends init {
 			$settings['icon']   = $this->get_setting( 'icon' )->run_type()->get_data();
 		}
 
-		echo '<style>';
+		echo '<style data-sv_100_module="'. $this->get_prefix() . '">';
 		echo ':root {' . "\n";
 		echo '--sv_scroll_to_top-icon' . ":  url('data:image/svg+xml;utf8," . $settings['icon'] . "');\n";
 		echo '}</style>';
