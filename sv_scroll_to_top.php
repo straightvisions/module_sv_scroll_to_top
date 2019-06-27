@@ -1,10 +1,10 @@
 <?php
-namespace sv_100;
+namespace sv100;
 
 /**
  * @version         1.00
  * @author			straightvisions GmbH
- * @package			sv_100
+ * @package			sv100
  * @copyright		2019 straightvisions GmbH
  * @link			https://straightvisions.com
  * @since			1.0
@@ -15,11 +15,11 @@ class sv_scroll_to_top extends init {
 	public function init() {
 		// Module Info
 		$this->set_module_title( 'SV Scroll To Top' );
-		$this->set_module_desc( __( 'This module gives the ability to manage & display a scroll to top button.', 'straightvisions-100' ) );
+		$this->set_module_desc( __( 'This module gives the ability to manage & display a scroll to top button.', 'sv100' ) );
 
 		// Section Info
-		$this->set_section_title( __( 'Scroll To Top - Button', 'straightvisions-100' ) );
-		$this->set_section_desc( __( 'Settings', 'straightvisions-100' ) );
+		$this->set_section_title( __( 'Scroll To Top - Button', 'sv100' ) );
+		$this->set_section_desc( __( 'Settings', 'sv100' ) );
 		$this->set_section_type( 'settings' );
 		$this->get_root()->add_section( $this );
 
@@ -30,15 +30,15 @@ class sv_scroll_to_top extends init {
 		$this->s['active'] =
 			$this->get_setting()
 				 ->set_ID( 'active' )
-				 ->set_title( __( 'Active', 'straightvisions-100' ) )
-				 ->set_description( __( 'Activate or deactivate the scroll to top button.', 'straightvisions-100' ) )
+				 ->set_title( __( 'Active', 'sv100' ) )
+				 ->set_description( __( 'Activate or deactivate the scroll to top button.', 'sv100' ) )
 				 ->load_type( 'checkbox' );
 		
 		$this->s['icon'] =
 			$this->get_setting()
 				->set_ID( 'icon' )
-				->set_title( __( 'Icon Embed Code', 'straightvisions-100' ) )
-				->set_description( __( 'Here you can post the SVG embed code.', 'straightvisions-100' ) )
+				->set_title( __( 'Icon Embed Code', 'sv100' ) )
+				->set_description( __( 'Here you can post the SVG embed code.', 'sv100' ) )
 				->load_type( 'textarea' );
 
 		return $this;
@@ -87,7 +87,7 @@ class sv_scroll_to_top extends init {
 				$settings['icon']   = $this->get_setting( 'icon' )->run_type()->get_data();
 			}
 			
-			echo '<style data-sv_100_module="'. $this->get_prefix() . '">';
+			echo '<style data-sv100_module="'. $this->get_prefix() . '">';
 			echo ':root {' . "\n";
 			echo '--sv_scroll_to_top-icon' . ":  url('data:image/svg+xml;utf8," . $settings['icon'] . "');\n";
 			echo '}</style>';
