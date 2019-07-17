@@ -81,6 +81,14 @@
 		}
 	
 		public function load( $settings = array() ): string {
+			$settings								= shortcode_atts(
+				array(
+					'inline'						=> false,
+				),
+				$settings,
+				$this->get_module_name()
+			);
+			
 			return $this->router( $settings );
 		}
 	
@@ -89,7 +97,7 @@
 			
 			if ( $this->get_setting( 'activate' )->run_type()->get_data() === '1' ) {
 				ob_start();
-				$this->scripts_queue['default']->set_is_enqueued();
+				$this->scripts_queue['default']->set_inline( $settings['inline'] )->set_is_enqueued();
 				$this->scripts_queue['default_js']->set_is_enqueued();
 				$this->scripts_queue['inline_config']->set_is_enqueued();
 				
