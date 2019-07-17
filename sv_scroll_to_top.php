@@ -18,7 +18,7 @@
 			$this->set_module_desc( __( 'This module gives the ability to manage & display a scroll to top button.', 'sv100' ) );
 	
 			// Section Info
-			$this->set_section_title( __( 'Scroll To Top - Button', 'sv100' ) )
+			$this->set_section_title( __( 'Scroll To Top', 'sv100' ) )
 				 ->set_section_desc( __( 'Settings', 'sv100' ) )
 				 ->set_section_type( 'settings' )
 				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) );
