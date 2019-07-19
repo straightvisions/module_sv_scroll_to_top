@@ -14,11 +14,11 @@
 	class sv_scroll_to_top extends init {
 		public function init() {
 			$this->set_module_title( 'SV Scroll To Top' )
-				 ->set_module_desc( __( 'This module gives the ability to manage & display a scroll to top button.', 'sv100' ) )
+				 ->set_module_desc( __( 'Displays a scroll to top button.', 'sv100' ) )
 				 ->load_settings()
 				 ->register_scripts()
 				 ->set_section_title( __( 'Scroll To Top', 'sv100' ) )
-				 ->set_section_desc( __( 'Settings', 'sv100' ) )
+				 ->set_section_desc( __( 'Icon & Color settings', 'sv100' ) )
 				 ->set_section_type( 'settings' )
 				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
 				 ->get_root()
@@ -34,13 +34,13 @@
 				 ->load_type( 'checkbox' );
 			
 			$this->get_setting( 'icon' )
-				 ->set_title( __( 'Icon Embed Code', 'sv100' ) )
+				 ->set_title( __( 'Icon embed code', 'sv100' ) )
 				 ->set_description( __( 'Here you can post the SVG embed code.', 'sv100' ) )
 				 ->set_default_value( '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>' )
 				 ->load_type( 'textarea' );
 			
 			$this->get_setting( 'icon_color' )
-				 ->set_title( __( 'Icon Color', 'sv100' ) )
+				 ->set_title( __( 'Icon color', 'sv100' ) )
 				 ->set_default_value( '#ffffff' )
 				 ->load_type( 'color' );
 	
