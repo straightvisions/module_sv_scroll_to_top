@@ -26,7 +26,7 @@
 		}
 	
 		protected function load_settings(): sv_scroll_to_top {
-			$this->get_settings_component( 'bg_color','background_color', '#1e1f22' );
+			$this->get_settings_component( 'bg_color','background_color', '#1e1e1e' );
 			
 			$this->get_setting( 'activate' )
 				 ->set_title( __( 'Activate Scroll To Top Button', 'sv100' ) )
