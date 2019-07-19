@@ -11,11 +11,5 @@
 				echo $module->get_settings_component( 'bg_color' )->run_type()->form();
 			?>
 		</div>
-
-		<div class="sv_setting_flex">
-			<?php
-				echo $module->get_setting( 'icon' )->run_type()->form();
-			?>
-		</div>
 		<?php
 	}
