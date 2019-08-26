@@ -13,7 +13,7 @@
 	
 	class sv_scroll_to_top extends init {
 		public function init() {
-			$this->set_module_title( 'SV Scroll To Top' )
+			$this->set_module_title( __( 'SV Scroll To Top', 'sv100' ) )
 				 ->set_module_desc( __( 'Displays a scroll to top button.', 'sv100' ) )
 				 ->load_settings()
 				 ->register_scripts()
