@@ -23,6 +23,15 @@
 				 ->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
 				 ->get_root()
 				 ->add_section( $this );
+
+			// Loads SV Scroll To Top
+			if (
+				$this->get_setting( 'activate' )->run_type()->get_data() === '1'
+			) {
+				add_action( 'wp_footer', function(){
+					echo $this->get_module( 'sv_scroll_to_top' )->load();
+				} );
+			}
 		}
 	
 		protected function load_settings(): sv_scroll_to_top {
