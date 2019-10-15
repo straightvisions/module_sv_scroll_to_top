@@ -30,7 +30,7 @@
 			) {
 				add_action( 'wp_footer', function(){
 					echo $this->get_module( 'sv_scroll_to_top' )->load();
-				} );
+				} , 1);
 			}
 		}
 	
@@ -59,7 +59,8 @@
 		protected function register_scripts(): sv_scroll_to_top {
 			// Register Styles
 			$this->get_script( 'default' )
-				 ->set_path( 'lib/frontend/css/default.css' );
+				 ->set_path( 'lib/frontend/css/default.css' )
+				->set_inline( true );
 	
 			// Register Scripts
 			$this->get_script( 'default_js' )
@@ -77,7 +78,7 @@
 		public function load( $settings = array() ): string {
 			$settings								= shortcode_atts(
 				array(
-					'inline'						=> false,
+					'inline'						=> true,
 				),
 				$settings,
 				$this->get_module_name()
