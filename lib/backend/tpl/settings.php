@@ -8,7 +8,7 @@
 			<?php
 				echo $module->get_setting( 'activate' )->run_type()->form();
 				echo $module->get_setting( 'icon_color' )->run_type()->form();
-				echo $module->get_settings_component( 'bg_color' )->run_type()->form();
+				echo $module->get_setting( 'bg_color' )->run_type()->form();
 			?>
 		</div>
 		<?php

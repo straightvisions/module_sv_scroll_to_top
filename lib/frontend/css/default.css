@@ -1,4 +1,4 @@
-.sv100_sv_scroll_to_top {
+.sv100_companion_modules_sv_scroll_to_top {
     display: none;
     position: fixed;
     right: 5%;
@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-.sv100_sv_scroll_to_top > i {
+.sv100_companion_modules_sv_scroll_to_top > i {
     height: 100%;
     width: 100%;
     display: block;

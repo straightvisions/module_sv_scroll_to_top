@@ -11,11 +11,11 @@
 	}
 ?>
 
-.sv100_sv_scroll_to_top {
+.sv100_companion_modules_sv_scroll_to_top {
 	background-color: rgba(<?php echo $bg_color; ?>);
 }
 
-.sv100_sv_scroll_to_top > i {
+.sv100_companion_modules_sv_scroll_to_top > i {
 	background-color: rgba(<?php echo $icon_color;  ?>);
 	-webkit-mask-image: url( 'data:image/svg+xml;utf8, <?php echo $icon; ?> ');
 }
