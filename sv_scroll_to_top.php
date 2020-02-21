@@ -50,11 +50,20 @@
 				 ->set_title( __( 'Icon color', 'sv100_companion' ) )
 				 ->set_default_value( '#ffffff' )
 				 ->load_type( 'color' );
+			$this->get_setting( 'icon_color_hover' )
+				 ->set_title( __( 'Icon color (Hover/Focus)', 'sv100_companion' ) )
+				 ->set_default_value( '#ffffff' )
+				 ->load_type( 'color' );
 
 			$this->get_setting( 'bg_color' )
 				->set_title( __( 'Background color', 'sv100_companion' ) )
 				->set_default_value( '#000' )
 				->load_type( 'color' );
+			
+			$this->get_setting( 'bg_color_hover' )
+				 ->set_title( __( 'Background color (Hover/Focus)', 'sv100_companion' ) )
+				 ->set_default_value( '#000' )
+				 ->load_type( 'color' );
 	
 			return $this;
 		}
