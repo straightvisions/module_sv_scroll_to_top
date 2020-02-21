@@ -45,15 +45,6 @@
 				 ->set_description( __( 'Here you can post the SVG embed code.', 'sv100_companion' ) )
 				 ->set_default_value( '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>' )
 				 ->load_type( 'textarea' );
-			
-			$this->get_setting( 'icon_color' )
-				 ->set_title( __( 'Icon color', 'sv100_companion' ) )
-				 ->set_default_value( '#ffffff' )
-				 ->load_type( 'color' );
-			$this->get_setting( 'icon_color_hover' )
-				 ->set_title( __( 'Icon color (Hover/Focus)', 'sv100_companion' ) )
-				 ->set_default_value( '#ffffff' )
-				 ->load_type( 'color' );
 
 			$this->get_setting( 'bg_color' )
 				->set_title( __( 'Background color', 'sv100_companion' ) )
@@ -63,6 +54,32 @@
 			$this->get_setting( 'bg_color_hover' )
 				 ->set_title( __( 'Background color (Hover/Focus)', 'sv100_companion' ) )
 				 ->set_default_value( '#000' )
+				 ->load_type( 'color' );
+			
+			$this->get_setting( 'icon_size' )
+				 ->set_title( __( 'Icon size', 'sv100_companion' ) )
+				 ->set_description( __( 'Size in %.' ) )
+				 ->set_default_value( '100' )
+				 ->set_min( 0 )
+				 ->set_max( 100 )
+				 ->load_type( 'number' );
+			
+			$this->get_setting( 'icon_size_hover' )
+				 ->set_title( __( 'Icon size (Hover/Focus)', 'sv100_companion' ) )
+				 ->set_description( __( 'Size in %.' ) )
+				 ->set_default_value( '100' )
+				 ->set_min( 0 )
+				 ->set_max( 100 )
+				 ->load_type( 'number' );
+			
+			$this->get_setting( 'icon_color' )
+				 ->set_title( __( 'Icon color', 'sv100_companion' ) )
+				 ->set_default_value( '#ffffff' )
+				 ->load_type( 'color' );
+			
+			$this->get_setting( 'icon_color_hover' )
+				 ->set_title( __( 'Icon color (Hover/Focus)', 'sv100_companion' ) )
+				 ->set_default_value( '#ffffff' )
 				 ->load_type( 'color' );
 	
 			return $this;

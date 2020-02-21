@@ -18,7 +18,6 @@
         display: block;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
-        -webkit-mask-size: 100%;
-        transition: background-color .25s ease;
+        transition: background-color .25s ease, -webkit-mask-size .25s ease;
     }
 }
