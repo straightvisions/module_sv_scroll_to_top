@@ -24,7 +24,7 @@
 
 			// Loads SV Scroll To Top
 			if (
-				$this->get_setting( 'activate' )->run_type()->get_data() === '1'
+				$this->get_setting( 'activate' )->get_data() === '1'
 			) {
 				add_action( 'wp_footer', function(){
 					echo $this->load();
@@ -119,7 +119,7 @@
 		protected function router( array $settings ): string {
 			$output = '';
 			
-			if ( $this->get_setting( 'activate' )->run_type()->get_data() === '1' ) {
+			if ( $this->get_setting( 'activate' )->get_data() === '1' ) {
 				ob_start();
 				$this->get_script( 'default' )->set_inline( $settings['inline'] )->set_is_enqueued();
 				$this->get_script( 'default_js' )->set_is_enqueued();
