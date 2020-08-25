@@ -7,6 +7,7 @@
 		<div class="sv_setting_flex">
 			<?php
 				echo $module->get_setting( 'activate' )->form();
+				echo $module->get_setting( 'position' )->form();
 				echo $module->get_setting( 'icon' )->form();
 				echo $module->get_setting( 'icon_size' )->form();
 				echo $module->get_setting( 'icon_size_hover' )->form();

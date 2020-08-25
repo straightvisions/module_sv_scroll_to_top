@@ -40,6 +40,15 @@
 				 ->set_default_value( 0 )
 				 ->load_type( 'checkbox' );
 
+			$this->get_setting( 'position' )
+				->set_title( __( 'Position', 'sv100_companion' ) )
+				->set_default_value( 'right' )
+				->set_options(array(
+					'left'		=> 'left',
+					'right'		=> 'right'
+				))
+				->load_type( 'select' );
+
 			$this->get_setting( 'icon' )
 				 ->set_title( __( 'Icon embed code', 'sv100_companion' ) )
 				 ->set_description( __( 'Here you can post the SVG embed code.', 'sv100_companion' ) )

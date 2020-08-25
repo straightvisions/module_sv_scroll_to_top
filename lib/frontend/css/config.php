@@ -13,6 +13,7 @@
 
 .sv100_companion_modules_sv_scroll_to_top {
 	background-color: rgba(<?php echo $bg_color; ?>);
+	<?php echo $position; ?>: 5%;
 }
 
 .sv100_companion_modules_sv_scroll_to_top:hover,
