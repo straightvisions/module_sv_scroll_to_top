@@ -96,8 +96,8 @@
 	
 		protected function register_scripts(): sv_scroll_to_top {
 			// Register Styles
-			$this->get_script( 'default' )
-				 ->set_path( 'lib/frontend/css/default.css' )
+			$this->get_script( 'common' )
+				 ->set_path( 'lib/frontend/css/common.css' )
 				->set_inline( true );
 	
 			// Register Scripts
@@ -130,7 +130,7 @@
 			
 			if ( $this->get_setting( 'activate' )->get_data() === '1' ) {
 				ob_start();
-				$this->get_script( 'default' )->set_inline( $settings['inline'] )->set_is_enqueued();
+				$this->get_script( 'common' )->set_inline( $settings['inline'] )->set_is_enqueued();
 				$this->get_script( 'default_js' )->set_is_enqueued();
 				$this->get_script( 'inline_config' )->set_is_enqueued();
 				
