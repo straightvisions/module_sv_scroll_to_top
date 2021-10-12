@@ -102,8 +102,7 @@
 			// Register Scripts
 			$this->get_script( 'default_js' )
 				 ->set_path( 'lib/frontend/js/default.js' )
-				 ->set_type( 'js' )
-				 ->set_deps( array( 'jquery' ) );
+				 ->set_type( 'js' );
 			
 			$this->get_script( 'inline_config' )
 				 ->set_path( 'lib/frontend/css/config.php' )
@@ -133,7 +132,7 @@
 				$this->get_script( 'default_js' )->set_is_enqueued();
 				$this->get_script( 'inline_config' )->set_is_enqueued();
 				
-				echo '<div class="' . $this->get_prefix() . '"><i></i></div>';
+				echo '<div id="' . $this->get_prefix() . '"><i></i></div>';
 				
 				$output	= ob_get_contents();
 				ob_end_clean();
