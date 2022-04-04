@@ -5,7 +5,7 @@
 		width: 0;
 		height: 0;
 		cursor: pointer;
-		z-index: 1000;
+		z-index: 10000000;
 		transition: background-color .25s ease, width 1s ease, height 1s ease, padding 1s ease;
 	}
 	#sv100_companion_sv_scroll_to_top.show{
