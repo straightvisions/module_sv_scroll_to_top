@@ -11,7 +11,10 @@
 				 ->get_root()->add_section( $this );
 
 			// Loads SV Scroll To Top
-			if ( $this->get_setting( 'activate' )->get_data() === '1' ) {
+			if (
+				$this->get_setting( 'activate' )->get_data()
+				&& in_array('1', $this->get_setting( 'activate' )->get_data())
+			) {
 				add_action( 'wp_footer', array($this, 'load') , 1);
 			}
 		}
@@ -19,6 +22,7 @@
 		protected function load_settings(): sv_scroll_to_top {
 			$this->get_setting( 'activate' )
 				 ->set_title( __( 'Activate Scroll To Top Button', 'sv100_companion' ) )
+				->set_is_responsive(true)
 				 ->load_type( 'checkbox' );
 
 			$this->get_setting( 'position' )

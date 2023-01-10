@@ -2,6 +2,16 @@
 	$properties					                                 = array();
 	$properties[$module->get_setting('position')->get_data()]	 = '5%';
 
+	$active = array_map(function ($val) {
+		if($val === '1'){
+			return 'block';
+		}
+
+		return 'none';
+	}, $module->get_setting('activate')->get_data());
+
+	$properties['display']	= $active;
+
 	echo $_s->build_css(
 		'#sv100_companion_sv_scroll_to_top',
 		array_merge(
