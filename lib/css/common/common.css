@@ -1,4 +1,6 @@
 #sv100_companion_sv_scroll_to_top {
+	height:0;
+	width:0;
 	position: fixed;
 	bottom: 5%;
 	cursor: pointer;
@@ -11,6 +13,5 @@
 	display: block;
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
-	-webkit-mask-size: contain;
 	transition: background-color .25s ease, -webkit-mask-size .25s ease;
 }

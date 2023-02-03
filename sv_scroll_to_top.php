@@ -25,14 +25,29 @@
 				->set_is_responsive(true)
 				 ->load_type( 'checkbox' );
 
-			$this->get_setting( 'position' )
-				->set_title( __( 'Position', 'sv100_companion' ) )
-				->set_default_value( 'right' )
-				->set_options(array(
-					'left'		=> 'left',
-					'right'		=> 'right'
-				))
-				->load_type( 'select' );
+			$this->get_setting( 'position_top' )
+			     ->set_title( __( 'Top', 'sv100_companion' ) )
+			     ->set_default_value( 'auto' )
+			     ->set_is_responsive(true)
+			     ->load_type( 'text' );
+
+			$this->get_setting( 'position_right' )
+			     ->set_title( __( 'Right', 'sv100_companion' ) )
+			     ->set_default_value( '10px' )
+			     ->set_is_responsive(true)
+			     ->load_type( 'text' );
+
+			$this->get_setting( 'position_bottom' )
+			     ->set_title( __( 'Bottom', 'sv100_companion' ) )
+			     ->set_default_value( '0' )
+			     ->set_is_responsive(true)
+			     ->load_type( 'text' );
+
+			$this->get_setting( 'position_left' )
+			     ->set_title( __( 'Left', 'sv100_companion' ) )
+			     ->set_default_value( 'auto' )
+			     ->set_is_responsive(true)
+			     ->load_type( 'text' );
 
 			$this->get_setting( 'icon' )
 				 ->set_title( __( 'Icon embed code', 'sv100_companion' ) )
@@ -52,22 +67,18 @@
 				 ->set_default_value( '#000000' )
 				 ->set_is_responsive(true)
 				 ->load_type( 'color' );
+
+			$this->get_setting( 'box_size' )
+			     ->set_title( __( 'Box size', 'sv100_companion' ) )
+			     ->set_description( __( 'Size in px.' ) )
+			     ->set_default_value( '50' )
+			     ->set_is_responsive(true)
+			     ->load_type( 'number' );
 			
 			$this->get_setting( 'icon_size' )
 				 ->set_title( __( 'Icon size', 'sv100_companion' ) )
-				 ->set_description( __( 'Size in %.' ) )
-				 ->set_default_value( '100' )
-				 ->set_min( 0 )
-				 ->set_max( 100 )
-				 ->set_is_responsive(true)
-				 ->load_type( 'number' );
-			
-			$this->get_setting( 'icon_size_hover' )
-				 ->set_title( __( 'Icon size (Hover/Focus)', 'sv100_companion' ) )
-				 ->set_description( __( 'Size in %.' ) )
-				 ->set_default_value( '100' )
-				 ->set_min( 0 )
-				 ->set_max( 100 )
+				 ->set_description( __( 'Size in px.' ) )
+				 ->set_default_value( '12' )
 				 ->set_is_responsive(true)
 				 ->load_type( 'number' );
 			
